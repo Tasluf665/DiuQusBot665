@@ -8,15 +8,32 @@ const fs = require("fs");
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const bot = new TelegramBot(token, { polling: true });
 
-bot.on("message", (msg) => {
-  const chatId = msg.chat.id;
+bot.onText(/\/add_question/, (msg) => {
+  bot.sendMessage(
+    msg.chat.id,
+    "Send your question into this email: tasluf665@gmail.com"
+  );
+});
 
-  if (msg.text.includes("/start")) {
-    bot.sendMessage(chatId, "Welcome to the DIU Questions Bank");
-  } else if (msg.text.includes("/")) {
+bot.onText(/\/start/, (msg) => {
+  bot.sendMessage(msg.chat.id, "Welcome to the DIU Questions Bank");
+});
+bot.onText(/\/help/, (msg) => {
+  bot.sendMessage(
+    msg.chat.id,
+    "Use your course code and enter the qus type. Ex: /cse112_mid to get the questions"
+  );
+});
+
+bot.onText(/\//, (msg) => {
+  if (
+    msg.text === "/start" ||
+    msg.text === "/add_question" ||
+    msg.text === "/help"
+  ) {
+  } else {
     let courseCode = msg.text.replace("/", "");
     let targetQuestions = allQuestion[courseCode];
-    console.log(targetQuestions);
 
     if (targetQuestions) {
       let arrayOfQus = "";
@@ -26,13 +43,17 @@ bot.on("message", (msg) => {
           `${index + 1}. ${element.qusName} \n ${element.driveLink}\n`;
       });
 
-      bot.sendMessage(chatId, arrayOfQus);
+      bot.sendMessage(msg.chat.id, arrayOfQus);
     } else {
-      bot.sendMessage(chatId, "Sorry no question is found...😞");
+      bot.sendMessage(msg.chat.id, "Sorry no question is found...😞");
     }
-  } else {
+  }
+});
+
+bot.on("message", (msg) => {
+  if (msg.text[0] !== "/") {
     bot.sendMessage(
-      chatId,
+      msg.chat.id,
       "I don't understand. Please use / commands only.😑"
     );
   }
