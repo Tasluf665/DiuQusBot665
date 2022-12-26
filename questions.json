@@ -7,8 +7,6 @@
         "semester": "Fall",
         "year": "2022",
         "shift": "Day",
-        "online": true,
-        "url": "./Questions/CSE112/Mid/CSE112_Fall2022_Mid_Day_Computer Fundamentals.pdf",
         "type": "mid",
         "driveLink": "https://drive.google.com/file/d/1cJBnhlma_SoNxwLux1ivlHauU75mSoLy/view?usp=sharing"
       }
@@ -22,8 +20,6 @@
         "semester": "Fall",
         "year": "2022",
         "shift": "Day",
-        "online": true,
-        "url": "./Questions/CSE112/Final/CSE112_Fall2022_Final_Day_Computer Fundamentals.pdf",
         "type": "final",
         "driveLink": "https://drive.google.com/file/d/1BvpBYNsfePKe83W0XP9jYwqo0jIzXeRP/view?usp=sharing"
       }
@@ -37,8 +33,6 @@
         "semester": "Summer",
         "year": "2022",
         "shift": "Day",
-        "online": false,
-        "url": "./Questions/CSE421/Final/CSE421_Summer2022_Final_Day_Computer Graphics.pdf",
         "type": "final",
         "driveLink": "https://drive.google.com/file/d/1y356EB5RSGos6qsT8fX78i16Mix-_hjU/view"
       }
