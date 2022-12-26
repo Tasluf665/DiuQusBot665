@@ -82,7 +82,25 @@ app.listen(port, () => {
 });
 ```
 
-Create the questions.json file and the telegram bot
+Create the questions.json file
+```nodejs
+{
+  "cse421_final": {
+    "name": "Computer Graphics",
+    "questions": [
+      {
+        "qusName": "CSE421_Summer2022_Final_Day_Computer Graphics.pdf",
+        "semester": "Summer",
+        "year": "2022",
+        "shift": "Day",
+        "type": "final",
+        "driveLink": "https://drive.google.com/file/d/1y356EB5RSGos6qsT8fX78i16Mix-_hjU/view"
+      }
+    ]
+  }
+}
+```
+Create the telegram bot
 ```nodejs
 require("dotenv").config();
 const express = require("express");
